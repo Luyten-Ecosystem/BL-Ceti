@@ -1,0 +1,7 @@
+/home/benicio/Escritorio/BL-Ceti/build/CMakeFiles/BL.dir
+/home/benicio/Escritorio/BL-Ceti/build/CMakeFiles/edit_cache.dir
+/home/benicio/Escritorio/BL-Ceti/build/CMakeFiles/rebuild_cache.dir
+/home/benicio/Escritorio/BL-Ceti/build/CMakeFiles/list_install_components.dir
+/home/benicio/Escritorio/BL-Ceti/build/CMakeFiles/install.dir
+/home/benicio/Escritorio/BL-Ceti/build/CMakeFiles/install/local.dir
+/home/benicio/Escritorio/BL-Ceti/build/CMakeFiles/install/strip.dir

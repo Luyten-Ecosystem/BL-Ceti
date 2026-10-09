@@ -1,0 +1,4 @@
+fn main() {
+    let mensaje: String = "Hola desde BL-Ceti";
+    print(mensaje);
+}
