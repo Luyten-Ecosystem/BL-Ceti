@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/benicio/Escritorio/BL-Ceti/src/lexer.c" "CMakeFiles/BL.dir/src/lexer.c.o" "gcc" "CMakeFiles/BL.dir/src/lexer.c.o.d"
   "/home/benicio/Escritorio/BL-Ceti/src/main.c" "CMakeFiles/BL.dir/src/main.c.o" "gcc" "CMakeFiles/BL.dir/src/main.c.o.d"
+  "/home/benicio/Escritorio/BL-Ceti/src/parser.c" "CMakeFiles/BL.dir/src/parser.c.o" "gcc" "CMakeFiles/BL.dir/src/parser.c.o.d"
   "" "BL" "gcc" "CMakeFiles/BL.dir/link.d"
   )
 

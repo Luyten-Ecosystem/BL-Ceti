@@ -4,6 +4,7 @@ BL: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o \
   CMakeFiles/BL.dir/src/main.c.o \
   CMakeFiles/BL.dir/src/lexer.c.o \
+  CMakeFiles/BL.dir/src/parser.c.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/libgcc.a \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/libgcc_s_asneeded.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/libgcc_s_asneeded.so \
@@ -45,6 +46,8 @@ BL: \
 CMakeFiles/BL.dir/src/main.c.o:
 
 CMakeFiles/BL.dir/src/lexer.c.o:
+
+CMakeFiles/BL.dir/src/parser.c.o:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/16/libgcc.a:
 

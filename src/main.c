@@ -1,5 +1,5 @@
-
 #include "lexer.h"
+#include "parser.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,6 +16,7 @@ static char *read_file(const char *path, size_t *length)
 
     if (fseek(file, 0, SEEK_END) != 0) {
         fclose(file);
+        fprintf(stderr, "BL: no se pudo leer el archivo.\n");
         return NULL;
     }
 
@@ -23,6 +24,7 @@ static char *read_file(const char *path, size_t *length)
 
     if (size < 0 || fseek(file, 0, SEEK_SET) != 0) {
         fclose(file);
+        fprintf(stderr, "BL: no se pudo determinar el tamaño del archivo.\n");
         return NULL;
     }
 
@@ -46,6 +48,7 @@ static char *read_file(const char *path, size_t *length)
     buffer[read_count] = '\0';
     *length = read_count;
     fclose(file);
+
     return buffer;
 }
 
@@ -54,29 +57,48 @@ static int analyze_file(const char *path)
     size_t length = 0;
     char *source = read_file(path, &length);
 
-    if (source == NULL) return 1;
+    if (source == NULL) {
+        return 1;
+    }
 
-    BlLexResult result = {0};
-    bool success = bl_lex(source, length, &result);
+    BlLexResult lex_result = {0};
 
-    if (!success) {
+    if (!bl_lex(source, length, &lex_result)) {
         fprintf(stderr, "%s:%zu:%zu: error %s: %s\n",
                 path,
-                result.error.line,
-                result.error.column,
-                result.error.code,
-                result.error.message);
-        bl_lex_result_destroy(&result);
+                lex_result.error.line,
+                lex_result.error.column,
+                lex_result.error.code,
+                lex_result.error.message);
+
+        bl_lex_result_destroy(&lex_result);
         free(source);
         return 1;
     }
 
-    printf("BL-Ceti: analisis lexico correcto: %s\n", path);
-    printf("Tokens reconocidos: %zu\n",
-           result.count > 0 ? result.count - 1 : 0);
+    BlParseError parse_error = {0};
 
-    bl_lex_result_destroy(&result);
+    if (!bl_parse(lex_result.tokens, lex_result.count, &parse_error)) {
+        fprintf(stderr, "%s:%zu:%zu: error %s: %s\n",
+                path,
+                parse_error.line,
+                parse_error.column,
+                parse_error.code,
+                parse_error.message);
+
+        bl_lex_result_destroy(&lex_result);
+        free(source);
+        return 1;
+    }
+
+    printf("BL-Ceti 0.1.0: analisis correcto: %s\n", path);
+    printf("Tokens reconocidos: %zu\n",
+           lex_result.count > 0 ? lex_result.count - 1 : 0);
+    printf("Sintaxis: correcta\n");
+
+    bl_lex_result_destroy(&lex_result);
     free(source);
+
     return 0;
 }
 

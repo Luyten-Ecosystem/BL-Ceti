@@ -1,4 +1,7 @@
+cat > /tmp/bl-error.bl <<'EOF'
 fn main() {
-    let mensaje: String = "Hola desde BL-Ceti";
-    print(mensaje);
+    let numero: Int = ;
 }
+EOF
+
+./build/BL .C /tmp/bl-error.bl

@@ -1,5 +1,5 @@
-
 cmake_minimum_required(VERSION 3.20)
+
 project(BLCeti VERSION 0.1.0 LANGUAGES C)
 
 set(CMAKE_C_STANDARD 17)
@@ -9,6 +9,7 @@ set(CMAKE_C_EXTENSIONS OFF)
 add_executable(BL
     src/main.c
     src/lexer.c
+    src/parser.c
 )
 
 target_include_directories(BL PRIVATE include)

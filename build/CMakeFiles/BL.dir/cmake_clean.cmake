@@ -6,6 +6,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/BL.dir/src/lexer.c.o.d"
   "CMakeFiles/BL.dir/src/main.c.o"
   "CMakeFiles/BL.dir/src/main.c.o.d"
+  "CMakeFiles/BL.dir/src/parser.c.o"
+  "CMakeFiles/BL.dir/src/parser.c.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

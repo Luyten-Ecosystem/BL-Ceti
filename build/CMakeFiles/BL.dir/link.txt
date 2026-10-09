@@ -1,1 +1,1 @@
-/usr/bin/cc -Wl,--dependency-file=CMakeFiles/BL.dir/link.d CMakeFiles/BL.dir/src/main.c.o CMakeFiles/BL.dir/src/lexer.c.o -o BL
+/usr/bin/cc -Wl,--dependency-file=CMakeFiles/BL.dir/link.d CMakeFiles/BL.dir/src/main.c.o CMakeFiles/BL.dir/src/lexer.c.o CMakeFiles/BL.dir/src/parser.c.o -o BL
